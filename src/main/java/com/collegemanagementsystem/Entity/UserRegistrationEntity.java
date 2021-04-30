@@ -1,7 +1,5 @@
 package com.collegemanagementsystem.Entity;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 
 @Entity
@@ -13,8 +11,8 @@ public class UserRegistrationEntity {
     private Integer uid;
     @Column(name="name")
     private String name;
-    @Column(name="username")
-    private String username;
+    @Column(name="email")
+    private String email;
     @Column(name="password")
     private String password;
     @Column(name="status")
@@ -53,12 +51,12 @@ public class UserRegistrationEntity {
         this.name = name;
     }
 
-    public String getUsername() {
-        return username;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {

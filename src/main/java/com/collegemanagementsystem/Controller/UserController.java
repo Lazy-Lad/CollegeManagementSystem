@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Dictionary;
+import java.util.Hashtable;
 import java.util.List;
 
 @Controller
@@ -23,9 +25,10 @@ public class UserController {
     }
     @RequestMapping(value="/registration",method = RequestMethod.POST)
     @ResponseBody
-    public String adduser(@RequestBody UserRegistrationDto userRegistrationDto){
+    public Dictionary adduser(@RequestBody UserRegistrationDto userRegistrationDto){
         userRegistrationService.addUser(userRegistrationDto);
-        String msg = "Registration Successful";
+        Dictionary msg=new Hashtable();
+        msg.put("message","Registration Successful");
         return msg;
     }
 

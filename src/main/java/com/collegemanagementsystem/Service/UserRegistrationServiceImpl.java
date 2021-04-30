@@ -33,7 +33,7 @@ public class UserRegistrationServiceImpl implements UserRegistrationService{
     public UserRegistrationEntity addUser(UserRegistrationDto userdto){
         UserRegistrationEntity newuser=new UserRegistrationEntity();
         newuser.setName(userdto.getName());
-        newuser.setUsername(userdto.getUsername());
+        newuser.setEmail(userdto.getEmail());
         newuser.setPassword(passwordEncoder.encode(userdto.getPassword()));
         newuser.setStatus(userdto.getStatus());
         newuser.setMobile(userdto.getMobile());
